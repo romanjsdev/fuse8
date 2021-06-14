@@ -52,11 +52,11 @@ p {
 .cards .container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 .cards .container .card {
   width: 32.3%;
-  margin: 1.5rem 0;
+  margin: 1.5rem 0.6rem;
 }
 @media (max-width: 769px) {
   .cards .container .card {
@@ -67,6 +67,9 @@ p {
   .cards .container .card {
     width: 100%;
   }
+}
+.cards .container .card:hover {
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
 }
 .cards .container .card__img {
   position: relative;
@@ -130,7 +133,30 @@ p {
 .see-more button {
   display: block;
   margin: 5rem auto;
+  padding: 1rem 5rem 1rem 3rem;
+  border: 1px solid #D8D8D8;
+  box-sizing: border-box;
+  border-radius: 25px;
+  background-color: #FFF;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 2.4rem;
   cursor: pointer;
+  position: relative;
+  transition: 0.3s;
+}
+.see-more button::after {
+  content: "";
+  display: block;
+  background: url(../img/arrow.svg) no-repeat;
+  width: 2.2rem;
+  height: 2rem;
+  top: 1.4rem;
+  right: 2rem;
+  position: absolute;
+}
+.see-more button:hover {
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
 }
 
 /*# sourceMappingURL=style.css.map */

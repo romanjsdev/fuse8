@@ -27,7 +27,7 @@ const render = async(data) =>{
 const getCardTemplate = (el) => `<div class="card">
 			<a href="https://603e38c548171b0017b2ecf7.mockapi.io/homes/details/${el.id}">
 			<div class="card__img">
-				<img src="/img/image.jpg">
+				<img src="/img/image.jpg" alt="${el.title}">
 				<p class="card__type ${el.type == 'IndependentLiving' ? 'blue':'orange'}">${el.type}</p>
 			</div>
 			<div class="card__body">
