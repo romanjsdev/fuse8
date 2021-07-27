@@ -14,9 +14,7 @@ const render = async(data) =>{
 	cards.innerHTML = '';
 
 	if (data.length !=0) {
-		data.forEach( el => {
-			cards.innerHTML += getCardTemplate(el);
-		});
+		data.forEach( el => cards.innerHTML += getCardTemplate(el));
 		seeMore.style.display = 'block';
 	} else {
 		cards.innerHTML = "<div>Not found</div>";
@@ -27,7 +25,7 @@ const render = async(data) =>{
 const getCardTemplate = (el) => `<div class="card">
 			<a href="https://603e38c548171b0017b2ecf7.mockapi.io/homes/details/${el.id}">
 			<div class="card__img">
-				<img src="/img/image.jpg" alt="${el.title}">
+				<img src="./img/image.jpg" alt="${el.title}">
 				<p class="card__type ${el.type == 'IndependentLiving' ? 'blue':'orange'}">${el.type}</p>
 			</div>
 			<div class="card__body">
@@ -44,15 +42,13 @@ const filter = (data, inputVal) => {
 			return el;
 		}
 	}) 
-	return(filterData);
+	return filterData;
 }
 
 const run = async() =>{
 	data = await getData(URL);
 	render(data);
-	input.oninput = () => {
-		input.value.length > 3 ? render(filter(data, input.value)) : render(data);
-	}
+	input.oninput = () => input.value.length > 3 ? render(filter(data, input.value)) : render(data);
 }
 
 run();
